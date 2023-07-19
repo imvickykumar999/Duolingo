@@ -40,23 +40,40 @@ my_lang = lingo.get_languages()
 # print(my_lang)
 # ['Italian', 'Spanish', 'Russian', 'Portuguese', 'Vietnamese', 'French', 'German', 'Hindi', 'Japanese', 'Korean', 'Arabic', 'Ukrainian']
 
+from pprint import pprint
+pprint(lingo.get_language_details('Korean'))
 
-for i in my_lang:
-    print(lingo.get_language_details(i))
+'''
+{
+ 'current_learning': True,
+ 'language': 'ko',
+ 'language_string': 'Korean',
+ 'learning': True,
+ 'level': 5,
+ 'points': 373,
+ 'sentences_translated': 0,
+ 'streak': 6,
+ 'to_next_level': 77
+}
+'''
+
+
+# for i in my_lang:
+#     print(lingo.get_language_details(i))
     
 '''
-{'streak': 5, 'language_string': 'Italian', 'points': 27, 'learning': True, 'language': 'it', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 33}
-{'streak': 5, 'language_string': 'Spanish', 'points': 1550, 'learning': True, 'language': 'es', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 100}
-{'streak': 5, 'language_string': 'Russian', 'points': 1333, 'learning': True, 'language': 'ru', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 317}
-{'streak': 5, 'language_string': 'Portuguese', 'points': 55, 'learning': True, 'language': 'pt', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 5}
-{'streak': 5, 'language_string': 'Vietnamese', 'points': 30, 'learning': True, 'language': 'vi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
-{'streak': 5, 'language_string': 'French', 'points': 30, 'learning': True, 'language': 'fr', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
-{'streak': 5, 'language_string': 'German', 'points': 50, 'learning': True, 'language': 'de', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 10}
-{'streak': 5, 'language_string': 'Hindi', 'points': 0, 'learning': True, 'language': 'hi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 60}
-{'streak': 5, 'language_string': 'Japanese', 'points': 375, 'learning': True, 'language': 'ja', 'level': 5, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 75}
-{'streak': 5, 'language_string': 'Korean', 'points': 346, 'learning': True, 'language': 'ko', 'level': 5, 'current_learning': True, 'sentences_translated': 0, 'to_next_level': 104}
-{'streak': 5, 'language_string': 'Arabic', 'points': 32386, 'learning': True, 'language': 'ar', 'level': 25, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 2147451261}
-{'streak': 5, 'language_string': 'Ukrainian', 'points': 533, 'learning': True, 'language': 'uk', 'level': 6, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 217}
+{'streak': 6, 'language_string': 'Italian', 'points': 27, 'learning': True, 'language': 'it', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 33}
+{'streak': 6, 'language_string': 'Spanish', 'points': 1550, 'learning': True, 'language': 'es', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 100}
+{'streak': 6, 'language_string': 'Russian', 'points': 1333, 'learning': True, 'language': 'ru', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 317}
+{'streak': 6, 'language_string': 'Portuguese', 'points': 55, 'learning': True, 'language': 'pt', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 5}
+{'streak': 6, 'language_string': 'Vietnamese', 'points': 30, 'learning': True, 'language': 'vi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
+{'streak': 6, 'language_string': 'French', 'points': 30, 'learning': True, 'language': 'fr', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
+{'streak': 6, 'language_string': 'German', 'points': 50, 'learning': True, 'language': 'de', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 10}
+{'streak': 6, 'language_string': 'Hindi', 'points': 0, 'learning': True, 'language': 'hi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 60}
+{'streak': 6, 'language_string': 'Japanese', 'points': 375, 'learning': True, 'language': 'ja', 'level': 5, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 75}
+{'streak': 6, 'language_string': 'Korean', 'points': 373, 'learning': True, 'language': 'ko', 'level': 5, 'current_learning': True, 'sentences_translated': 0, 'to_next_level': 77}
+{'streak': 6, 'language_string': 'Arabic', 'points': 32386, 'learning': True, 'language': 'ar', 'level': 25, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 2147451261}
+{'streak': 6, 'language_string': 'Ukrainian', 'points': 533, 'learning': True, 'language': 'uk', 'level': 6, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 217}
 '''
 
 # print(lingo.get_language_progress('ko'))
