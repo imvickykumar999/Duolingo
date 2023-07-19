@@ -1,3 +1,43 @@
+
+# `unable to login with api, no returns #128`
+
+#### Issue Solved Locally : https://github.com/KartikTalwar/Duolingo/issues/128#issuecomment-1449474903
+
+> @flyinggoatman I fixed this for my usecase by removing `self.jwt = None` at https://github.com/KartikTalwar/Duolingo/blob/master/duolingo.py#L100, which then allowed me to instantiate like `lingo = duolingo.Duolingo(username='myUsername', jwt='myJWT')`
+> 
+> You can grab your JWT by logging in on duolingo.com and then running this JavaScript, which will output the token into the console:
+
+    document.cookie.match(new RegExp('(^| )jwt_token=([^;]+)'))[0].slice(11);
+
+'eyJ0eXA************IUzI1NiJ9.************************.r0Qg9T47L************SL0Nc0Xg'
+
+<br>
+
+```python
+import duolingo
+myJWT = 'eyJ0eXA*************IUzI1NiJ9.************************.r0Qg9T47L************SL0Nc0Xg'
+lingo = duolingo.Duolingo(username='DuolingoAP218492', jwt=myJWT)
+
+for i in lingo.get_languages():
+    print(lingo.get_language_details(i))
+```
+
+```markdown
+{'streak': 5, 'language_string': 'Italian', 'points': 27, 'learning': True, 'language': 'it', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 33}
+{'streak': 5, 'language_string': 'Spanish', 'points': 1550, 'learning': True, 'language': 'es', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 100}
+{'streak': 5, 'language_string': 'Russian', 'points': 1333, 'learning': True, 'language': 'ru', 'level': 8, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 317}
+{'streak': 5, 'language_string': 'Portuguese', 'points': 55, 'learning': True, 'language': 'pt', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 5}
+{'streak': 5, 'language_string': 'Vietnamese', 'points': 30, 'learning': True, 'language': 'vi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
+{'streak': 5, 'language_string': 'French', 'points': 30, 'learning': True, 'language': 'fr', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 30}
+{'streak': 5, 'language_string': 'German', 'points': 50, 'learning': True, 'language': 'de', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 10}
+{'streak': 5, 'language_string': 'Hindi', 'points': 0, 'learning': True, 'language': 'hi', 'level': 1, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 60}
+{'streak': 5, 'language_string': 'Japanese', 'points': 375, 'learning': True, 'language': 'ja', 'level': 5, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 75}
+{'streak': 5, 'language_string': 'Korean', 'points': 346, 'learning': True, 'language': 'ko', 'level': 5, 'current_learning': True, 'sentences_translated': 0, 'to_next_level': 104}
+{'streak': 5, 'language_string': 'Arabic', 'points': 32386, 'learning': True, 'language': 'ar', 'level': 25, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 2147451261}
+{'streak': 5, 'language_string': 'Ukrainian', 'points': 533, 'learning': True, 'language': 'uk', 'level': 6, 'current_learning': False, 'sentences_translated': 0, 'to_next_level': 217}
+```
+
+
 # Duolingo API for Python
 
 [![Build Status](https://travis-ci.org/KartikTalwar/Duolingo.svg?branch=master)](https://travis-ci.org/KartikTalwar/Duolingo)
