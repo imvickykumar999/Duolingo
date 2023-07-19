@@ -16,7 +16,7 @@
 ```python
 import duolingo
 myJWT = 'eyJ0eXA*************IUzI1NiJ9.************************.r0Qg9T47L************SL0Nc0Xg'
-lingo = duolingo.Duolingo(username='DuolingoAP218492', jwt=myJWT)
+lingo = duolingo.Duolingo(username='imvickykumar999', jwt=myJWT)
 
 for i in lingo.get_languages():
     print(lingo.get_language_details(i))
